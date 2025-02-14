@@ -202,16 +202,16 @@ overflow: hidden;
     width: 330px;
     padding: 40px;
     --color-plan: #696871;
-    --color-price: #1D293F;
+    --color-price: #275a94;
     --bg-cta: #fff;
     --color-cta: #5454D4;
-    --color-items: #696871;
+    --color-items: #9eb9db;
 }
 
 .price__element--best{
     width: 370px;
     padding: 60px 40px;
-    background-color: #FF7143;
+    background-color: #73a1f5;
     --color-plan: rgb(255 255 255 / 75%);
     --color-price: #fff;
     --bg-cta: #9F3919;
