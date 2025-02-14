@@ -51,11 +51,11 @@ body{
     display: flex;
     align-items: center;
 }
-.nav_title{ /*logo*/
+.nav__title{ /*logo*/
 font-weight:300 ;
 
 }
-.nav_link{
+.nav__link{
     margin-left: auto;
     padding: 0;
     display: grid;
@@ -73,9 +73,10 @@ font-weight:300 ;
     text-decoration: none;
 }
 
-.nav_menu{
+.nav__menu{
     margin-left: auto;
     cursor: pointer;
+    display: none;
 }
 
 .nav__img {
