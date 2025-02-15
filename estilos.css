@@ -320,20 +320,24 @@ overflow: hidden;
 .questions__paddidng{
     padding: 0;
     transition: padding .2s;
-    border:1px solid #31069f;
+    border:1px solid #0e022c;
     border-radius: 6px;
 }
 .questions__paddidng--add{
     padding-bottom: 30px;
 }
 .questions_answer{
-    padding: 30px 0 30px;
+    padding: 0 30px 0;
     cursor: pointer;
     font-size: 20px;
     color: var(--color-title);
 }
 .questions_title{
     display: flex;
+    padding: 30 px  0 30px;
+    cursor: pointer;
+    color: var(--color-title);
+    justify-content: space-between;
 }
 .questions_arrow{
     border-radius: 50%;
