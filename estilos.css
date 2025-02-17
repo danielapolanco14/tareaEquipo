@@ -311,7 +311,7 @@ overflow: hidden;
 .questions{
     text-align: center;
 }
-.questions__conteiner{
+.questions__container{
     display: grid;
     gap: 2em;
     padding-top: 50px;
