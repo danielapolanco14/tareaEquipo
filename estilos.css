@@ -364,11 +364,13 @@ overflow: hidden;
     transform: rotate(180deg);
 }
 
-.questions__show{
+/* .questions__show{
+    border: 1px solid greenyellow;
     text-align: left;
     height: 0;
     transition: height .3s;
-}
+    padding-bottom: 10px;
+} */
 
 .questions__img{
     display: block;
