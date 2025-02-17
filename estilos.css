@@ -326,11 +326,11 @@ overflow: hidden;
 .questions__paddidng--add{
     padding-bottom: 30px;
 }
-.questions_answer{
+.questions__answer{
     padding: 0 30px 0;
     overflow: hidden;
 }
-.questions_title{
+.questions__title{
     text-align: left;
     display: flex;
     padding: 30 px  0 30px;
@@ -338,7 +338,7 @@ overflow: hidden;
     color: var(--color-title);
     justify-content: space-between;
 }
-.questions_arrow{
+.questions__arrow{
     border-radius: 50%;
     background-color: var(--color-title);
     width: 25px;
