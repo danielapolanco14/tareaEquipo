@@ -1,13 +1,14 @@
 // Areglo para productos carrito
 let cartItems = [];
 
-// Función  agrega productos al carrito
+// Función para agregar productos al carrito
 function addToCart(productName, productPrice) {
-  // 1. Agregar el producto al carrito
+  // Incrementar el contador del carrito
   let cartCount = parseInt(document.getElementById("cartCount").textContent) || 0;
   cartCount++;
   document.getElementById("cartCount").textContent = cartCount;
 
+  // Crear un nuevo producto y agregarlo al carrito
   const newItem = {
     name: productName,
     price: productPrice,
@@ -16,17 +17,22 @@ function addToCart(productName, productPrice) {
   cartItems.push(newItem);
   renderCartItems();
 
-  //  desplazar la página hacia el ícono del carrito
+  // Desplazar la página hacia el ícono del carrito
   const cartIcon = document.getElementById("cartIcon");
   cartIcon.scrollIntoView({ behavior: "smooth" });
 
-  //  Aplicar una animación al ícono del carrito
+  // Aplicar animación al ícono del carrito
   cartIcon.classList.add("highlight-cart-icon");
   setTimeout(() => {
     cartIcon.classList.remove("highlight-cart-icon");
   }, 1000);
 }
 
+// Función para eliminar un producto del carrito
+function eliminarDelCarrito(index) {
+  cartItems.splice(index, 1); // Eliminar el producto según su índice
+  renderCartItems(); // Volver a renderizar el carrito
+}
 
 // Función para renderizar los productos en el carrito
 function renderCartItems() {
@@ -77,17 +83,40 @@ function updateQuantity(index, change) {
     cartItems.splice(index, 1);
   }
 
-  
+
   renderCartItems();
-    // 2. Desplazar la página hacia el carrito
-    const cartPanel = document.getElementById("cartPanel");
-    cartPanel.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave
-  
-    //  animación al carrito
-    cartPanel.classList.add("highlight-cart"); // Agregar clase de animación
-    setTimeout(() => {
-      cartPanel.classList.remove("highlight-cart"); // Quitar la clase después de un tiempo
-    }, 1000); // Duración de la animación (1 segundo)
+  // 2. Desplazar la página hacia el carrito
+  const cartPanel = document.getElementById("cartPanel");
+  cartPanel.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave
+
+  //  animación al carrito
+  cartPanel.classList.add("highlight-cart"); // Agregar clase de animación
+  setTimeout(() => {
+    cartPanel.classList.remove("highlight-cart"); // Quitar la clase después de un tiempo
+  }, 1000); // Duración de la animación (1 segundo)
+}
+// Validación del formulario
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('paymentForm');
+  form.addEventListener('submit', function (event) {
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    form.classList.add('was-validated');
+  });
+});
+//FILTRO
+function filtrarProductos(categoria) {
+  let productos = document.querySelectorAll(".producto");
+  productos.forEach((producto) => {
+      if (categoria === "todos") {
+          producto.style.display = "block";
+      } else {
+          let productoCategoria = producto.getAttribute("data-categoria");
+          producto.style.display = (productoCategoria === categoria) ? "block" : "none";
+      }
+  });
 }
 
 // Renderizar el carrito al cargar la página
