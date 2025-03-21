@@ -1,9 +1,18 @@
-// Areglo para productos carrito
 let cartItems = [];
 
-// Función  agrega productos al carrito
+// Cargar el carrito desde el localStorage 
+document.addEventListener("DOMContentLoaded", () => {
+  const storedCartItems = localStorage.getItem("cartItems");
+  if (storedCartItems) {
+    cartItems = JSON.parse(storedCartItems);
+    renderCartItems();
+    updateCartCount();
+  }
+});
+
+//agregar productos al carrito
 function addToCart(productName, productPrice) {
-  // 1. Agregar el producto al carrito
+  // Agregar el producto al carrito
   let cartCount = parseInt(document.getElementById("cartCount").textContent) || 0;
   cartCount++;
   document.getElementById("cartCount").textContent = cartCount;
@@ -14,9 +23,14 @@ function addToCart(productName, productPrice) {
     quantity: 1,
   };
   cartItems.push(newItem);
+
+  // guardar el carrito en el localStorage
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+  // actualizar la vista del carrito
   renderCartItems();
 
-  //  desplazar la página hacia el ícono del carrito
+  // Desplazar la página hacia el ícono del carrito
   const cartIcon = document.getElementById("cartIcon");
   cartIcon.scrollIntoView({ behavior: "smooth" });
 
@@ -27,8 +41,7 @@ function addToCart(productName, productPrice) {
   }, 1000);
 }
 
-
-// Función para renderizar los productos en el carrito
+//  renderizar los productos en el carrito
 function renderCartItems() {
   const cartItemsContainer = document.getElementById("cartItems");
   const cartTotalElement = document.getElementById("cartTotal");
@@ -39,7 +52,7 @@ function renderCartItems() {
   let total = 0;
 
   // Recorrer los productos y agregarlos al carrito
-  cartItems.forEach((item) => {
+  cartItems.forEach((item, index) => {
     const listItem = document.createElement("li");
     listItem.classList.add("list-group-item");
 
@@ -48,9 +61,9 @@ function renderCartItems() {
         <div>
           <h6 class="mb-1">${item.name}</h6>
           <small class="text-muted">Cantidad: 
-            <button onclick="updateQuantity(${cartItems.indexOf(item)}, -1)">-</button>
+            <button class="btn btn-sm btn-outline-primary" onclick="updateQuantity(${index}, -1)">-</button>
             ${item.quantity}
-            <button onclick="updateQuantity(${cartItems.indexOf(item)}, 1)">+</button>
+            <button class="btn btn-sm btn-outline-primary" onclick="updateQuantity(${index}, 1)">+</button>
           </small>
           <p class="mb-0">Precio: $${item.price.toFixed(2)}</p>
         </div>
@@ -67,28 +80,39 @@ function renderCartItems() {
   cartTotalElement.textContent = `$${total.toFixed(2)}`;
 }
 
-//  actualizar la cantidad de un producto
+// actualizar la cantidad de un producto
 function updateQuantity(index, change) {
-  // Aumentar o disminuir la cantidad
+  // aumentar o disminuir la cantidad del producto
   cartItems[index].quantity += change;
 
-  // Si la cantidad es 0 o menor, eliminar el producto
+ 
   if (cartItems[index].quantity <= 0) {
     cartItems.splice(index, 1);
   }
 
-  
+  // Guardar el carrito actualizado en el localStorage
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+  // Volver a renderizar el carrito
   renderCartItems();
-    // 2. Desplazar la página hacia el carrito
-    const cartPanel = document.getElementById("cartPanel");
-    cartPanel.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave
-  
-    //  animación al carrito
-    cartPanel.classList.add("highlight-cart"); // Agregar clase de animación
-    setTimeout(() => {
-      cartPanel.classList.remove("highlight-cart"); // Quitar la clase después de un tiempo
-    }, 1000); // Duración de la animación (1 segundo)
+  updateCartCount();
+
+  // Desplazar la página hacia el carrito
+  const cartPanel = document.getElementById("cartPanel");
+  cartPanel.scrollIntoView({ behavior: "smooth" });
+
+  // Aplicar una animación al carrito
+  cartPanel.classList.add("highlight-cart");
+  setTimeout(() => {
+    cartPanel.classList.remove("highlight-cart");
+  }, 1000);
 }
 
-// Renderizar el carrito al cargar la página
-document.addEventListener("DOMContentLoaded", renderCartItems);
+// Función para actualizar el contador del carrito
+function updateCartCount() {
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  document.getElementById("cartCount").textContent = cartCount;
+}
+
+
+  
