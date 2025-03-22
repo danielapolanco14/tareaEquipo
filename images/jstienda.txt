@@ -107,34 +107,12 @@ function updateQuantity(index, change) {
     cartPanel.classList.remove("highlight-cart");
   }, 1000);
 }
+
 // Función para actualizar el contador del carrito
 function updateCartCount() {
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
   document.getElementById("cartCount").textContent = cartCount;
 }
-// Validación del formulario
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('paymentForm');
-  form.addEventListener('submit', function (event) {
-    if (!form.checkValidity()) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    form.classList.add('was-validated');
-  });
-});
-//FILTRO
-function filtrarProductos(categoria) {
-  let productos = document.querySelectorAll(".producto");
-  productos.forEach((producto) => {
-      if (categoria === "todos") {
-          producto.style.display = "block";
-      } else {
-          let productoCategoria = producto.getAttribute("data-categoria");
-          producto.style.display = (productoCategoria === categoria) ? "block" : "none";
-      }
-  });
-}
 
-// Renderizar el carrito al cargar la página
-document.addEventListener("DOMContentLoaded", renderCartItems);
+
+  
