@@ -1,0 +1,30 @@
+
+.image-container {
+    width: 100%; 
+    height: auto; 
+    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: #000; 
+  }
+  
+  .image-container img {
+    width: 100%; 
+    height: auto; 
+    max-height: 200px;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+  }
+  
+  /* pantallas  pequeñas */
+  @media (max-width: 768px) {
+    .image-container img {
+      max-height: 150px; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .image-container img {
+      max-height: 100px; 
+    }
+  }
