@@ -10,7 +10,9 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="registroCita.js" defer></script>
   </head>
+
   
   <body>
      <!-- Navbar -->
@@ -62,78 +64,52 @@
       </p>
     </div>
 
-    <form class="container mt-5 p-4 bg-white shadow rounded-3">
+    <form id="citaForm" class="container mt-5 p-4 bg-white shadow rounded-3">
       <!-- SECCIÓN DEL CLIENTE -->
       <div class="mb-4">
-        <label for="ownerName" class="form-label fw-semibold"
-          >Nombre del cliente</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="ownerName"
-          placeholder="Ingresa tu nombre completo"
-          required
-        />
+          <label for="ownerName" class="form-label fw-semibold">Nombre del cliente</label>
+          <input type="text" class="form-control" id="ownerName" placeholder="Ingresa tu nombre completo" required>
       </div>
-
+  
       <!-- SECCIÓN DE LA MASCOTA-->
       <div class="mb-4">
-        <label for="petName" class="form-label fw-semibold"
-          >Nombre de la mascota</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="petName"
-          placeholder="Ingresa el nombre de tu mascota"
-          required
-        />
+          <label for="petName" class="form-label fw-semibold">Nombre de la mascota</label>
+          <input type="text" class="form-control" id="petName" placeholder="Ingresa el nombre de tu mascota" required>
       </div>
-
+  
       <!-- TIPOS DE MASCOTAS -->
       <div class="mb-4">
-        <label for="petType" class="form-label fw-semibold"
-          >Tipo de mascota</label
-        >
-        <select class="form-select" id="petType" required>
-          <option selected disabled value="">
-            Selecciona el tipo de mascota
-          </option>
-          <option value="Perro">Perro</option>
-          <option value="Gato">Gato</option>
-          <option value="Ave">Ave</option>
-          <option value="Otro">Otro</option>
-        </select>
+          <label for="petType" class="form-label fw-semibold">Tipo de mascota</label>
+          <select class="form-select" id="petType" required>
+              <option selected disabled value="">Selecciona el tipo de mascota</option>
+              <option value="Perro">Perro</option>
+              <option value="Gato">Gato</option>
+              <option value="Ave">Ave</option>
+              <option value="Otro">Otro</option>
+          </select>
       </div>
-
+  
       <!-- FECHA DE LA CITA -->
       <div class="mb-4">
-        <label for="appoimentDate" class="form-label fw-semibold"
-          >Fecha de la cita</label
-        >
-        <input type="date" class="form-control" id="appoimentDate" required />
+          <label for="appoimentDate" class="form-label fw-semibold">Fecha de la cita</label>
+          <input type="date" class="form-control" id="appoimentDate" required>
       </div>
-
+  
       <!-- HORA DE LA CITA -->
       <div class="mb-4">
-        <label for="appoimentTime" class="form-label fw-semibold"
-          >Hora de la cita</label
-        >
-        <input type="time" class="form-control" id="appoimentTime" required />
+          <label for="appoimentTime" class="form-label fw-semibold">Hora de la cita</label>
+          <input type="time" class="form-control" id="appoimentTime" required>
       </div>
-
+  
       <!-- SERVICIOS QUE OFRECE LA VET -->
       <div class="mb-4">
-        <label for="serviceType" class="form-label fw-semibold"
-          >Servicio requerido</label
-        >
-        <select class="form-select" id="serviceType" required>
-          <option selected disabled value="">Selecciona el servicio</option>
-          <option value="Consulta general">Consulta general</option>
-          <option value="Vacunación">Vacunación</option>
-          <option value="Estética">Estética</option>
-        </select>
+          <label for="serviceType" class="form-label fw-semibold">Servicio requerido</label>
+          <select class="form-select" id="serviceType" required>
+              <option selected disabled value="">Selecciona el servicio</option>
+              <option value="Consulta general">Consulta general</option>
+              <option value="Vacunación">Vacunación</option>
+              <option value="Estética">Estética</option>
+          </select>
       </div>
 
       <!-- BOTÓN DE ENVIADO -->

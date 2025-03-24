@@ -9,6 +9,13 @@
     background-color: #275a94; /* Color específico (#275a94) */
   }
 
+  .detalle-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
 .image-container {
     width: 100%; 
     height: auto; 
