@@ -1,4 +1,14 @@
 
+.custom-navbar-container {
+    background-color: #275a94; 
+    padding: auto; 
+    border-radius: auto; 
+  }
+
+  .custom-container {
+    background-color: #275a94; /* Color específico (#275a94) */
+  }
+
 .image-container {
     width: 100%; 
     height: auto; 
