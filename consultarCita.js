@@ -6,7 +6,7 @@ const datosCita = JSON.parse(localStorage.getItem("datosCita"));
 if (datosCita) {
   const detalleCita = document.getElementById("detalleCita");
   detalleCita.innerHTML = `
-    <p><strong>Nombre:</strong> ${datosCita.nombre}</p>
+    <p><strong>Nombre del Cliente:</strong> ${datosCita.nombre}</p>
     <p><strong>Nombre Mascota:</strong> ${datosCita.nombreMascota}</p>
     <p><strong>Tipo de Mascota:</strong> ${datosCita.tipoMascota}</p>
     <p><strong>Fecha de Cita:</strong> ${datosCita.fechaCita}</p>
