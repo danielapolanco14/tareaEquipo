@@ -104,13 +104,8 @@ function updateQuantity(index, change) {
   // Aplicar una animación al carrito
   cartPanel.classList.add("highlight-cart");
   setTimeout(() => {
-    cartPanel.classList.remove("highlight-cart");
-  }, 1000);
-}
-// Función para actualizar el contador del carrito
-function updateCartCount() {
-  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-  document.getElementById("cartCount").textContent = cartCount;
+    cartPanel.classList.remove("highlight-cart"); // Quitar la clase después de un tiempo
+  }, 1000); // Duración de la animación (1 segundo)
 }
 // Validación del formulario
 document.addEventListener('DOMContentLoaded', () => {
