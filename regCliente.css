@@ -1,3 +1,10 @@
+body {
+    background-image: url('images/clienteVet.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
 .register {
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
     margin-top: 3%;
