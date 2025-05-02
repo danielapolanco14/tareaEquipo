@@ -52,3 +52,15 @@
       modal.hide();
     });
   });
+
+  //Búsqueda por ID
+  document.getElementById('formBuscarHistorial').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const id = document.getElementById('idMascota').value.trim();
+
+    if (id !== '') {
+      window.location.href = `detalleCita.html?id=${encodeURIComponent(id)}`;
+    } else {
+      alert('Por favor ingresa un ID válido.');
+    }
+  });

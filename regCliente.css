@@ -1,22 +1,25 @@
 body {
-    background-image: url('images/clienteVet.jpeg');
+    background-image: url('https://domesticasdecolombia.com/wp-content/uploads/2020/01/MASCOTAS.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
-
-.register {
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+  
+  /* Degradado suavizado: azul oscuro a azul claro con tonos más amigables */
+  .register {
+    background: linear-gradient(to right, #2a5298, #1e90ff);
     margin-top: 3%;
     padding: 3%;
+    border-radius: 1rem;
   }
-
+  
+  /* Sección izquierda (logo y mensaje) */
   .register-left {
     text-align: center;
     color: #fff;
     margin-top: 4%;
   }
-
+  
   .register-left input {
     border: none;
     border-radius: 1.5rem;
@@ -29,74 +32,82 @@ body {
     margin-bottom: 3%;
     cursor: pointer;
   }
-
-  .register-right {
-    background: #f8f9fa;
-    border-top-left-radius: 10% 50%;
-    border-bottom-left-radius: 10% 50%;
-  }
-
+  
   .register-left img {
     margin-top: 15%;
     margin-bottom: 5%;
     width: 25%;
-    -webkit-animation: mover 2s infinite alternate;
-    animation: mover 1s infinite alternate;
+    animation: mover 1.5s infinite alternate;
   }
-
-  @-webkit-keyframes mover {
-    0% {
-      transform: translateY(0);
-    }
-
-    100% {
-      transform: translateY(-20px);
-    }
-  }
-
+  
+  /* Animación de la mascota/logo */
   @keyframes mover {
     0% {
       transform: translateY(0);
     }
-
+  
     100% {
-      transform: translateY(-20px);
+      transform: translateY(-15px);
     }
   }
-
+  
+  /* Descripción lateral */
   .register-left p {
-    font-weight: lighter;
+    font-weight: 300;
     padding: 12%;
     margin-top: -9%;
   }
-
+  
+  /* Sección derecha (formulario) */
+  .register-right {
+    background: #ffffff;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
   .register .register-form {
     padding: 10%;
     margin-top: 10%;
   }
-
+  
+  /* Título del formulario */
+  .register-heading {
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #343a40;
+    font-weight: bold;
+  }
+  
+  /* Botón */
   .btnRegister {
     float: right;
     margin-top: 10%;
     border: none;
     border-radius: 1.5rem;
     padding: 2%;
-    background: #0062cc;
+    background: #007bff;
     color: #fff;
     font-weight: 600;
     width: 50%;
     cursor: pointer;
   }
-
+  
+  .btnRegister:hover {
+    background: #0056b3;
+  }
+  
+  /* Pestañas opcionales */
   .register .nav-tabs {
     margin-top: 3%;
     border: none;
-    background: #0062cc;
+    background: #007bff;
     border-radius: 1.5rem;
     width: 28%;
     float: right;
   }
-
+  
   .register .nav-tabs .nav-link {
     padding: 2%;
     height: 34px;
@@ -105,22 +116,17 @@ body {
     border-top-right-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
   }
-
+  
   .register .nav-tabs .nav-link:hover {
     border: none;
   }
-
+  
   .register .nav-tabs .nav-link.active {
     width: 100px;
-    color: #0062cc;
-    border: 2px solid #0062cc;
+    color: #007bff;
+    background: #fff;
+    border: 2px solid #007bff;
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;
   }
-
-  .register-heading {
-    text-align: center;
-    margin-top: 8%;
-    margin-bottom: -15%;
-    color: #495057;
-  }
+  

@@ -1,142 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Historial Médico - Veterinaria</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="historiales.js"></script>
-  <style>
-    body {
-      background: linear-gradient(to right, #f8f9fa, #e9ecef);
-      min-height: 100vh;
-    }
-    .navbar-brand {
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-    h1 {
-      color: #343a40;
-    }
-    .modal-header {
-      border-bottom: none;
-    }
-    .modal-footer {
-      border-top: none;
-    }
-    .table thead th {
-      vertical-align: middle;
-    }
-    .form-label {
-      font-weight: 500;
-    }
-    .btn-success {
-      background-color: #198754;
-      border: none;
-    }
-    .btn-success:hover {
-      background-color: #157347;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">VETERINARIA 4K</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historial Médico - Veterinaria</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="historiales.js" defer></script>
+    <style>
+      body {
+        background: linear-gradient(to right, #f8f9fa, #e9ecef);
+        min-height: 100vh;
+      }
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      h1 {
+        color: #343a40;
+      }
+      .modal-header {
+        border-bottom: none;
+      }
+      .modal-footer {
+        border-top: none;
+      }
+      .table thead th {
+        vertical-align: middle;
+      }
+      .form-label {
+        font-weight: 500;
+      }
+      .btn-success {
+        background-color: #198754;
+        border: none;
+      }
+      .btn-success:hover {
+        background-color: #157347;
+      }
+      .formBuscarHistorial {
+        background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">VETERINARIA 4K</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Contenido principal -->
-  <div class="container mt-5">
-    <h1 class="text-center mb-4">Historial Médico</h1>
+    <!-- Contenido principal -->
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Historial Médico</h1>
 
-    <!-- Tabla de Diagnósticos -->
-    <div class="table-responsive">
-      <table class="table table-bordered table-hover text-center">
-        <thead class="table-dark">
-          <tr>
-            <th>ID Diagnóstico</th>
-            <th>ID Cita</th>
-            <th>Diagnóstico</th>
-            <th>Precio ($)</th>
-          </tr>
-        </thead>
-        <tbody id="diagnosticosTable">
-          <!-- Filas de ejemplo -->
-          <tr>
-            <td>DX0001</td>
-            <td>CIT0001</td>
-            <td>Infección de oído</td>
-            <td>85.00</td>
-          </tr>
-          <tr>
-            <td>DX0002</td>
-            <td>CIT0002</td>
-            <td>Vacunación antirrábica</td>
-            <td>50.00</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Botón para agregar nuevo diagnóstico -->
-    <div class="text-center mt-4">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHistoryModal">
-        Agregar Diagnóstico
-      </button>
-    </div>
-  </div>
-
-  <!-- Modal para nuevo diagnóstico -->
-  <div class="modal fade" id="addHistoryModal" tabindex="-1" aria-labelledby="addHistoryModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form id="historialForm">
-          <div class="modal-header bg-primary text-white">
-            <h5 class="modal-title" id="addHistoryModalLabel">Nuevo Diagnóstico</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label for="idDiagnostico" class="form-label">ID del Diagnóstico *</label>
-              <input type="text" class="form-control" id="idDiagnostico" maxlength="8" required />
-            </div>
-            <div class="mb-3">
-              <label for="cita" class="form-label">ID de la Cita *</label>
-              <input type="text" class="form-control" id="cita" maxlength="7" required />
-            </div>
-            <div class="mb-3">
-              <label for="diagnostico" class="form-label">Diagnóstico *</label>
-              <textarea class="form-control" id="diagnostico" rows="4" required></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="precio" class="form-label">Precio (S/.) *</label>
-              <input type="number" step="0.01" class="form-control" id="precio" required />
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-success">Guardar</button>
-          </div>
+      <!-- Buscador por ID de mascota -->
+      <div class="d-flex justify-content-center mb-4 ">
+        <form
+          id="formBuscarHistorial"
+          class="d-flex shadow-sm rounded p-2 bg-white"
+          style="max-width: 500px; width: 100%"
+        >
+          <input
+            type="text"
+            class="form-control me-2"
+            id="idMascota"
+            placeholder="ID de la mascota (Ej: M1023)"
+            required
+            style="max-width: 300px"
+          />
+          <button type="submit" class="btn btn-outline-primary">Buscar</button>
         </form>
       </div>
+
+      <!-- Tabla de Diagnósticos -->
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover text-center">
+          <thead class="table-dark">
+            <tr>
+              <th>ID Diagnóstico</th>
+              <th>ID Cita</th>
+              <th>Diagnóstico</th>
+              <th>Precio ($)</th>
+            </tr>
+          </thead>
+          <tbody id="diagnosticosTable">
+            <!-- Filas de ejemplo -->
+            <tr>
+              <td>DX0001</td>
+              <td>CIT0001</td>
+              <td>Infección de oído</td>
+              <td>85.00</td>
+            </tr>
+            <tr>
+              <td>DX0002</td>
+              <td>CIT0002</td>
+              <td>Vacunación antirrábica</td>
+              <td>50.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Botón para agregar nuevo diagnóstico -->
+      <div class="text-center mt-4">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#addHistoryModal"
+        >
+          Agregar Diagnóstico
+        </button>
+      </div>
     </div>
-  </div>
 
-  <!-- Scripts Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Modal para nuevo diagnóstico -->
+    <div
+      class="modal fade"
+      id="addHistoryModal"
+      tabindex="-1"
+      aria-labelledby="addHistoryModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="historialForm">
+            <div class="modal-header bg-primary text-white">
+              <h5 class="modal-title" id="addHistoryModalLabel">
+                Nuevo Diagnóstico
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="idDiagnostico" class="form-label"
+                  >ID del Diagnóstico *</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="idDiagnostico"
+                  maxlength="8"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="cita" class="form-label">ID de la Cita *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cita"
+                  maxlength="7"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="diagnostico" class="form-label"
+                  >Diagnóstico *</label
+                >
+                <textarea
+                  class="form-control"
+                  id="diagnostico"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="precio" class="form-label">Precio (S/.) *</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  class="form-control"
+                  id="precio"
+                  required
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button type="submit" class="btn btn-success">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
-</body>
+    <!-- Scripts Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
