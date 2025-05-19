@@ -1,6 +1,6 @@
 
 body {
-  background: url('images/mas2.jpeg') no-repeat center center fixed;
+  background: url('../images/mas2.jpeg') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Segoe UI', sans-serif;
 }

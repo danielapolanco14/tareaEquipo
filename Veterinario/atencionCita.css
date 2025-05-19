@@ -1,0 +1,52 @@
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f8ff;
+            padding-top: 70px; /* Espacio para el navbar */
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #87cefa;
+            padding: 10px 0;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #003366;
+            font-size: 24px;
+        }
+
+        label {
+            color: #003366;
+            font-weight: bold;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .dog-image {
+            display: block;
+            margin: 20px auto 0;
+            width: 100px;
+            height: auto;
+        }
+
+        .actions button {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .actions {
+                gap: 10px;
+            }
+        }
