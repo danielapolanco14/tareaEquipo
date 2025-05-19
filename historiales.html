@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial Médico - Veterinaria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">VETERINARIA 4K</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#reseñas">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#login">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+       <!--Sección de encabezado
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+          <h1>Historial Médico de Mascotas</h1>
+        </div>
+      </header>-->
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Historial Médico de Mascotas</h1>
+
+        <!-- Buscar mascota -->
+        <div class="mb-4">
+            <label for="searchPet" class="form-label">Buscar por nombre de la mascota</label>
+            <input type="text" class="form-control" id="searchPet" placeholder="Ingresa el nombre de la mascota">
+        </div>
+
+        <!-- Tabla de historiales -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre de la Mascota</th>
+                        <th scope="col">Especie</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Motivo de la Visita</th>
+                        <th scope="col">Diagnóstico</th>
+                        <th scope="col">Tratamiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Ejemplo de fila de historial -->
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Firulais</td>
+                        <td>Perro</td>
+                        <td>2025-03-15</td>
+                        <td>Consulta General</td>
+                        <td>Resfrio</td>
+                        <td>Antibióticos por 7 días</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Mishi</td>
+                        <td>Gato</td>
+                        <td>2025-02-28</td>
+                        <td>Vacunación</td>
+                        <td>N/A</td>
+                        <td>Vacuna del moquillo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Botón para agregar nuevo historial -->
+        <div class="text-center mt-4">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHistoryModal">Agregar Nuevo Historial</button>
+        </div>
+
+        <!-- Modal para agregar nuevo historial -->
+        <div class="modal fade" id="addHistoryModal" tabindex="-1" aria-labelledby="addHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addHistoryModalLabel">Agregar Nuevo Historial</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="petName" class="form-label">Nombre de la Mascota</label>
+                                <input type="text" class="form-control" id="petName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="species" class="form-label">Especie</label>
+                                <input type="text" class="form-control" id="species" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="visitDate" class="form-label">Fecha</label>
+                                <input type="date" class="form-control" id="visitDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reason" class="form-label">Motivo de la Visita</label>
+                                <input type="text" class="form-control" id="reason" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="diagnosis" class="form-label">Diagnóstico</label>
+                                <input type="text" class="form-control" id="diagnosis">
+                            </div>
+                            <div class="mb-3">
+                                <label for="treatment" class="form-label">Tratamiento</label>
+                                <textarea class="form-control" id="treatment" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
