@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle Cita</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- CSS personalizado -->
+  <link href="./consultarCita.css" rel="stylesheet" />
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Tu JS -->
+  <script src="consultarCita.js" defer></script>
+</head>
+<body>
+
+  <!-- Contenedor de imagen de cabecera -->
+  <div class="image-container">
+    <img src="../images/barraConsulta.png" alt="Imagen de cabecera" />
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Veterinaria 4K</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container p-3 my-2 text-white rounded-3 shadow bg-primary">
+    <h1 class="text-center mb-4 fw-bold">DETALLE CITA</h1>
+    <p class="text-center">Revisa el detalle de tu cita</p>
+
+    <!-- Buscador de diagnóstico por ID -->
+    <form id="buscarCitaForm" class="d-flex justify-content-center mb-4">
+      <input type="text" id="buscarIdInput" placeholder="Ingresa ID Diagnóstico" class="form-control me-2" style="max-width: 300px" required />
+      <button type="submit" class="btn btn-light">Buscar</button>
+    </form>
+  </div>
+
+  <!-- Sección de detalle del diagnóstico -->
+  <div class="container mt-3">
+    <div class="detalle-container">
+      <div id="detalleCita" class="mb-4"></div> <!-- ✅ Contenedor para mostrar el diagnóstico -->
+
+      <!-- Formulario de modificación -->
+      <form id="formModificar" style="display:none;">
+        <div class="mb-3">
+          <label for="idDiagnostico" class="form-label">ID Diagnóstico</label>
+          <input type="text" class="form-control" id="idDiagnostico" readonly />
+        </div>
+        <div class="mb-3">
+          <label for="idCita" class="form-label">ID Cita</label>
+          <input type="text" class="form-control" id="idCita" required />
+        </div>
+        <div class="mb-3">
+          <label for="diagnostico" class="form-label">Diagnóstico</label>
+          <textarea class="form-control" id="diagnostico" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="precio" class="form-label">Precio</label>
+          <input type="number" class="form-control" id="precio" min="0" step="0.01" required />
+        </div>
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-success">Guardar Cambios</button>
+          <button type="button" id="cancelarMod" class="btn btn-secondary">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Botones de acciones -->
+  <div class="text-center mt-4">
+    <button id="btnMostrarModificar" class="btn btn-primary me-2">Modificar</button>
+    <button id="btnEliminar" class="btn btn-primary me-2">Eliminar</button>
+    <button id="btnAceptar" class="btn btn-primary">Aceptar</button>
+  </div>
+
+  <br />
+</body>
+</html>

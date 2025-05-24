@@ -1,0 +1,61 @@
+
+    body {
+      background-color: #f2f4f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #007bff, #0056b3);
+    }
+
+    .hero h1 {
+      font-weight: 700;
+    }
+
+    .card {
+      border: none;
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      max-height: 180px;
+      object-fit: contain;
+    }
+
+    .card-title {
+      font-weight: 600;
+    }
+
+    .btn-primary,
+    .btn-danger {
+      border-radius: 30px;
+      padding: 8px 20px;
+      font-weight: 500;
+    }
+
+    .footer {
+      background-color: #1c1c1e;
+      color: #ccc;
+    }
+
+    .footer a img {
+      filter: brightness(0) invert(1);
+      transition: transform 0.2s ease;
+    }
+
+    .footer a img:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .card img {
+        max-height: 140px;
+      }
+    }
+ 
