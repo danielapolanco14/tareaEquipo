@@ -1,0 +1,73 @@
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 20px;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 3rem;
+        color: #2a3d66;
+        margin-bottom: 40px;
+      }
+
+      .roles {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .card {
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 300px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+      }
+
+      .card h3 {
+        margin-bottom: 15px;
+        color: #2a3d66;
+      }
+
+      .card p {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .card a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4a90e2;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .card a:hover {
+        background-color: #357ab8;
+      }
