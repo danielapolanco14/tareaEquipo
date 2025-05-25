@@ -1,7 +1,6 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-image: url('../images/Masc.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -35,4 +34,120 @@ body {
   padding: 2.5rem;
   border-radius: 0.75rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Estilos para el spinner y botón */
+#agendarBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#agendarBtn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.fa-spinner {
+  margin-right: 5px;
+}
+
+/* Animación alternativa si fa-spin no funciona */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animación para el spinner */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilo para la notificación */
+#notificacion {
+  transition: all 0.3s ease;
+}
+
+.alert-success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-color: #badbcc;
+}
+
+
+.custom-navbar-container {
+    background-color: #275a94; 
+    padding: auto; 
+    border-radius: auto; 
+  }
+
+  .custom-container {
+    background-color: #275a94; /* Color específico (#275a94) */
+  }
+
+  .detalle-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+.image-container {
+    width: 100%; 
+    height: auto; 
+    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: #000; 
+  }
+  
+  .image-container img {
+    width: 100%; 
+    height: auto; 
+    max-height: 200px;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+  }
+  
+  /* pantallas  pequeñas */
+  @media (max-width: 768px) {
+    .image-container img {
+      max-height: 150px; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .image-container img {
+      max-height: 100px; 
+    }
+  }
+     .btn-spinner .fa-spinner {
+      margin-right: 8px;
+    }
+
+    /* Animación para la card */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Estilo para el spinner (si no está ya) */
+.fa-spinner {
+  margin-right: 8px;
 }

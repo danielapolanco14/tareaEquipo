@@ -1,44 +1,105 @@
-
+/* Estilos generales */
 body {
-  background: url('../images/mas2.jpeg') no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Segoe UI', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background: url('../images/mas2.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
+/* Navbar */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Contenedor de imagen */
+.image-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Tarjeta de formulario */
 .card {
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 30px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border: none;
 }
 
 .card h2 {
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
 }
 
+/* Formulario */
 .form-label {
-  font-weight: 500;
-  color: #555;
+    font-weight: 500;
+    color: #555;
 }
 
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Botones */
 .btn-primary {
-  background-color: #007bff;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+    background-color: #007bff;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    border: none;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
+/* Imagen de mascota */
 .pet-image {
-  display: block;
-  margin: 0 auto 20px auto;
-  width: 74px;
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 74px;
 }
 
+/* Radio buttons */
 .form-check-label {
-  margin-left: 4px;
+    margin-left: 4px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .image-container img {
+        max-height: 150px;
+    }
+    
+    body {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 576px) {
+    .image-container img {
+        max-height: 100px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
 }
