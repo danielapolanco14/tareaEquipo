@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Regristro Veterinario</title>
+    <title>Registro Veterinario</title>
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,115 +23,119 @@
     ></script>
   </head>
   <body oncontextmenu="return false" class="snippet-body">
-    
     <div class="container register">
       <div class="row">
         <div class="col-md-3 register-left">
-          <img src="images/cruzMasc.svg" alt="" />
+          <img src="../images/cruzMasc.svg" alt="" />
           <h3>Veterinaria 4k</h3>
           <p>Forma parte de nuestra comunidad.</p>
-          <input type="submit" name="" value="Login" /><br />
+       <input type="submit" id="btnLogin" value="Login" /><br />
         </div>
         <div class="col-md-9 register-right">
           <div class="tab-content" id="myTabContent">
-              <h3 class="register-heading">Aplica a veterinario.</h3>
-              <div class="row register-form">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Cedula *"
-                          value=""
-                        />
-                      </div>
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Sueldo*"
-                          value=""
-                        />
-                      </div>
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Primer nombre *"
-                      value=""
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Segundo nombre *"
-                      value=""
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="email"
-                      class="form-control"
-                      placeholder="Email *"
-                      value=""
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      maxlength="10"
-                      minlength="10"
-                      class="form-control"
-                      placeholder="Telefono *"
-                      value=""
-                    />
-                  </div>
+            <h3 class="register-heading">Aplica a veterinario.</h3>
+            <div class="row register-form">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Cedula *"
+                    id="cedula"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Sueldo*"
+                    id="sueldo"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Primer nombre *"
+                    id="nombre1"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Segundo nombre *"
+                    id="nombre2"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Email *"
+                    id="email"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    maxlength="10"
+                    minlength="10"
+                    class="form-control"
+                    placeholder="Telefono *"
+                    id="telefono"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Usuario *"
+                    id="usuario"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Contraseña *"
+                    id="password"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Confirma contraseña *"
+                    id="confirmar"
+                  />
+                </div>
+                <div class="form-group">
+                  <select class="form-control" id="especialidad">
+                    <option class="hidden" selected disabled>
+                      Selecciona tu especialidad
+                    </option>
+                    <option>Estetico</option>
+                    <option>Consulta/diagnostico</option>
+                  </select>
                 </div>
 
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Usuario *"
-                      value=""
-                    />
-                </div>
-                    <div class="form-group">
-                      <input
-                        type="password"
-                        class="form-control"
-                        placeholder="Contraseña *"
-                        value=""
-                      />
-                    </div>
-                    <div class="form-group">
-                      <input
-                        type="password"
-                        class="form-control"
-                        placeholder="Confirma contraseña *"
-                        value=""
-                      />
-                    </div>
-                    <div class="form-group">
-                      <select class="form-control">
-                        <option class="hidden" selected disabled>
-                          Selecciona tu especialidad
-                        </option>
-                        <option>Estetico</option>
-                        <option>Consulta/diagnostico</option>
-                      </select>
-                    </div>
-                  
-                  <input type="submit" class="btnRegister" value="Registro" />
-                </div>
+                <input
+                  type="submit"
+                  class="btnRegister"
+                  value="Registro"
+                  id="btnRegistro"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script type="text/javascript"></script>
+
+  <script src="./registroVet.js"></script>
   </body>
 </html>

@@ -1,24 +1,31 @@
+document.getElementById("formBaja").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    document.getElementById("formBaja").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const cedula = document.getElementById("cedula").value.trim();
-      if (!cedula) {
-        alert("Por favor ingresa una cédula.");
-        return;
-      }
+  const cedula = document.getElementById("cedula").value.trim();
+  const resultado = document.getElementById("resultado");
 
-      let veterinarios = JSON.parse(localStorage.getItem("veterinarios")) || [];
-      const index = veterinarios.findIndex(v => v.cedula === cedula);
+  // Obtener lista actual de veterinarios
+  let listaVeterinarios = JSON.parse(localStorage.getItem("veterinarios")) || [];
 
-      const resultado = document.getElementById("resultado");
+  // Buscar veterinario por cédula
+  const index = listaVeterinarios.findIndex(v => v.cedula === cedula);
 
-      if (index !== -1) {
-        veterinarios.splice(index, 1);
-        localStorage.setItem("veterinarios", JSON.stringify(veterinarios));
-        resultado.innerHTML = `<div class="alert alert-success">Veterinario con cédula <strong>${cedula}</strong> eliminado correctamente.</div>`;
-      } else {
-        resultado.innerHTML = `<div class="alert alert-warning">No se encontró un veterinario con esa cédula.</div>`;
-      }
+  if (index !== -1) {
+    // Eliminar del array
+    listaVeterinarios.splice(index, 1);
 
-      document.getElementById("formBaja").reset();
-    });
+    // Guardar nueva lista
+    localStorage.setItem("veterinarios", JSON.stringify(listaVeterinarios));
+
+    resultado.innerHTML = `<div class="alert alert-success">
+      Veterinario con cédula <strong>${cedula}</strong> eliminado correctamente.
+    </div>`;
+  } else {
+    resultado.innerHTML = `<div class="alert alert-warning">
+      No se encontró un veterinario con la cédula <strong>${cedula}</strong>.
+    </div>`;
+  }
+
+  // Limpiar el campo de cédula
+  document.getElementById("formBaja").reset();
+});
